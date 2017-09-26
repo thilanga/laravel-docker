@@ -24,6 +24,7 @@ To change configuration values, look in the `docker-compose.yml` file and change
 ### Build & Run
 
 ```bash
+cd ../docker
 docker-compose up --build -d
 ```
 

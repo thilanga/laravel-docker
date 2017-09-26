@@ -1,5 +1,4 @@
 # laravel-docker
-Docker container setup for Laravel projects
 
 ## Clone this repo
 

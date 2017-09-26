@@ -25,6 +25,7 @@ To change configuration values, look in the `docker-compose.yml` file and change
 
 ```bash
 docker-compose up --build -d
+docker exec -it docker_php_1 php ../artisan key:generate
 ```
 
 Navigate to [http://localhost:80](http://localhost:80) and you should see the application home page

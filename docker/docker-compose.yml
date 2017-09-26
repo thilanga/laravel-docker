@@ -1,0 +1,36 @@
+nginx:
+  build: images/nginx
+  command: nginx -g "daemon off;"
+  links:
+    - php
+  ports:
+    - "80:80"
+  environment:
+    - VIRTUAL_HOST:=api.laravel.thilangapitigala.dev
+php:
+  build: images/php
+  volumes:
+    - ../app:/var/www/html
+  working_dir: /var/www/html/public
+  command: php-fpm
+  links:
+    - db
+  ports:
+    - "9000:9000"
+  links:
+    - db
+  environment:
+    - DB_HOST=mysqldb
+    - DB_DATABASE=laravel
+    - DB_USERNAME=root
+    - DB_PASSWORD=password
+    - DB_CONNECTION=mysql
+db:
+  image: mysql
+  ports:
+    - "3306:3306"
+  environment:
+    - MYSQL_DATABASE=laravel
+    - MYSQL_ROOT_PASSWORD=password
+    - MYSQL_USER=root
+    - MYSQL_PASSWORD=password

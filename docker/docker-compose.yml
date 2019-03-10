@@ -1,0 +1,26 @@
+version: "3"
+services:
+  app:
+    build: images/app
+    ports:
+      - "80:80"
+    links:
+      - db
+    environment:
+      - SERVER_ROOT=/var/www/html/public
+      - DB_HOST=mysqldb
+      - DB_DATABASE=laravel
+      - DB_USERNAME=root
+      - DB_PASSWORD=password
+      - DB_CONNECTION=mysql
+    volumes:
+      - ../app:/var/www/html
+  db:
+    image: mysql:8
+    ports:
+      - "3306:3306"
+    environment:
+      - MYSQL_DATABASE=laravel
+      - MYSQL_ROOT_PASSWORD=password
+      - MYSQL_USER=root
+      - MYSQL_PASSWORD=password

@@ -1,0 +1,6 @@
+.idea
+mysql
+
+## Remove once you setup the project
+app/*
+!app/.gitkeep

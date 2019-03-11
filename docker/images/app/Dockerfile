@@ -43,6 +43,7 @@ apk add \
     php7-fileinfo \
     php7-fpm \
     php7-gd \
+    php7-pdo_mysql \
     php7-iconv \
     php7-json \
     php7-mbstring \

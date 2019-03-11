@@ -8,7 +8,7 @@ services:
       - db
     environment:
       - SERVER_ROOT=/var/www/html/public
-      - DB_HOST=mysqldb
+      - DB_HOST=db
       - DB_DATABASE=laravel
       - DB_USERNAME=root
       - DB_PASSWORD=password

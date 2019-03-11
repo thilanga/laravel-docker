@@ -16,7 +16,8 @@ services:
     volumes:
       - ../app:/var/www/html
   db:
-    image: mysql:8
+    image: mysql:latest
+    command: mysqld --default-authentication-plugin=mysql_native_password
     ports:
       - "3306:3306"
     environment:

@@ -13,8 +13,7 @@ To change configuration values, look in the `docker-compose.yml` file and change
 ### Build & Run
 
 ```bash
-cd ../docker
-docker-compose up --build -d
+docker-compose -f docker/docker-compose.yml up --build -d
 docker exec -it --user www-data docker_app_1 composer create-project --prefer-dist laravel/laravel . 
 ```
 

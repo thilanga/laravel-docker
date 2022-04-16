@@ -66,6 +66,8 @@ RUN apk add \
     php8-zip \
     php8-zlib
 
+RUN ln -s /usr/bin/php8 /usr/bin/php
+
 # Set up cron
 COPY crontab /var/spool/cron/crontabs/www-data
 RUN /usr/bin/crontab /var/spool/cron/crontabs/www-data
